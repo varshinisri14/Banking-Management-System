@@ -32,6 +32,8 @@ public class BankConsoleApp {
 
         accounts.put(id, new Account(id, name));
         System.out.println("Account Created Successfully.");
+        System.out.println("Account ID: " + id);
+        System.out.println("Customer Name: " + name);
     }
 
     public static void deposit() {
@@ -55,7 +57,8 @@ public class BankConsoleApp {
         acc.balance += amount;
 
         System.out.println("Deposit Successful.");
-        System.out.println("Balance: " + acc.balance);
+        System.out.println("Account Holder: " + acc.customerName);
+        System.out.println("Current Balance: ₹" + acc.balance);
     }
 
     public static void withdraw() {
@@ -85,7 +88,8 @@ public class BankConsoleApp {
         acc.balance -= amount;
 
         System.out.println("Withdrawal Successful.");
-        System.out.println("Balance: " + acc.balance);
+        System.out.println("Account Holder: " + acc.customerName);
+        System.out.println("Current Balance: ₹" + acc.balance);
     }
 
     public static void checkBalance() {
@@ -99,8 +103,11 @@ public class BankConsoleApp {
 
         Account acc = accounts.get(id);
 
-        System.out.println("Customer Name: " + acc.customerName);
-        System.out.println("Balance: " + acc.balance);
+        System.out.println("========== Account Details ==========");
+        System.out.println("Account ID      : " + acc.id);
+        System.out.println("Customer Name   : " + acc.customerName);
+        System.out.println("Current Balance : ₹" + acc.balance);
+        System.out.println("=====================================");
     }
 
     public static void closeAccount() {
@@ -112,8 +119,9 @@ public class BankConsoleApp {
             return;
         }
 
+        Account acc = accounts.get(id);
         accounts.remove(id);
-        System.out.println("Account Closed Successfully.");
+        System.out.println("Account of " + acc.customerName + " closed successfully.");
     }
 
     public static void main(String[] args) {
