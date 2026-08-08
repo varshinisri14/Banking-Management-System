@@ -15,8 +15,9 @@ public class BankConsoleApp {
             System.out.println("3. Withdraw");
             System.out.println("4. Check Balance");
             System.out.println("5. Close Account");
-            System.out.println("6. Exit");
-            System.out.print("Enter Choice: ");
+            System.out.println("6. View All Accounts");
+            System.out.println("7. Exit");
+            System.out.println("Enter Choice : ");
 
             int choice = sc.nextInt();
 
@@ -38,13 +39,13 @@ public class BankConsoleApp {
                     bank.checkBalance();
                     break;
 
-                case 5:
-                    bank.closeAccount();
-                    break;
-
                 case 6:
-                    System.out.println("Thank You");
-                    return;
+                  bank.viewAllAccounts();
+                  break;
+
+                case 7:
+                      System.out.println("Thank You");
+                     return;
 
                 default:
                     System.out.println("Invalid Choice");

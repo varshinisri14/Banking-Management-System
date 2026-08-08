@@ -97,6 +97,20 @@ public class BankService {
         System.out.println("Current Balance : ₹" + acc.balance);
         System.out.println("=====================================");
     }
+    public void viewAllAccounts() {
+    if (accounts.isEmpty()) {
+        System.out.println("No accounts available.");
+        return;
+    }
+
+    System.out.println("===== All Accounts =====");
+
+    for (Account acc : accounts.values()) {
+        System.out.println("ID: " + acc.id
+                + " | Name: " + acc.customerName
+                + " | Balance: ₹" + acc.balance);
+    }
+   }
 
     public void closeAccount() {
         System.out.print("Enter Account ID: ");
